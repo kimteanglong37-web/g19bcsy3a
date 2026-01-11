@@ -7,7 +7,7 @@
      
     ?>
     <form class="col-md-8 col-lg-6 mx-auto">
-        <h1>Login Page</h1>
+        <h1>Login Page1</h1>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
