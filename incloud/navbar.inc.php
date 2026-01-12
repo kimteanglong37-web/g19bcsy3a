@@ -17,9 +17,9 @@
             auth
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/g19bcsy3A/pages/auth/login.php">login</a></li>
+            <li><a class="dropdown-item" href="/g19bcsy3A/pages/login.php">login</a></li>
              <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/g19bcsy3A/pages/auth/register.php">register action</a></li>
+            <li><a class="dropdown-item" href="/g19bcsy3A/pages/register.php">register action</a></li>
            
             
           </ul>
