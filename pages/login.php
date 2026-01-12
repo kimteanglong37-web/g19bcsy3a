@@ -1,11 +1,6 @@
 
 
-    <?php
-      include '../incloud/header.inc.php';
-     include '../incloud/navbar.inc.php';
-
-     
-    ?>
+    
     <form class="col-md-8 col-lg-6 mx-auto">
         <h1>Login Page1</h1>
   <div class="mb-3">
@@ -24,8 +19,6 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<?php
-include '../incloud/footer.inc.php';
-?>
+
     
 
