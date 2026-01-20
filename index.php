@@ -1,9 +1,10 @@
 <?php
+    require_once './init/db.init.php';
     include './incloud/header.inc.php';
     include './incloud/navbar.inc.php';
 
 
-     $available_pages = ['page' , 'register'];
+     $available_pages = ['page' , 'register', 'Login'];
 
     if (isset($_GET['page'])){
       $page = $_GET['page'];

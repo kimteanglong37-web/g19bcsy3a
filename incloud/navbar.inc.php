@@ -19,7 +19,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="?page=Login">login</a></li>
              <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="?page=register">register action</a></li>
+            <li><a class="dropdown-item" href="?page=register">register </a></li>
            
             
           </ul>
