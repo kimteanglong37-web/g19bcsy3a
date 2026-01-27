@@ -1,5 +1,5 @@
 <?php
-    require_once './init/db.init.php';
+    require_once './init/init.php';
     include './incloud/header.inc.php';
     include './incloud/navbar.inc.php';
 
