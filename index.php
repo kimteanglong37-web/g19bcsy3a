@@ -1,28 +1,34 @@
 <?php
-    require_once './init/init.php';
-    include './incloud/header.inc.php';
-    include './incloud/navbar.inc.php';
+require_once './init/init.php';
+$user = loggedInUser();
+include './incloud/header.inc.php';
+include './incloud/navbar.inc.php';
 
 
-     $available_pages = ['page' , 'register', 'Login'];
+$available_pages = ['login', 'register', 'dashboard', 'Logout'];
+$logged_in_pages = ['dashboard'];
+$non_logged_in_pages = ['login', 'register'];
 
-    if (isset($_GET['page'])){
-      $page = $_GET['page'];
-      if (in_array($page, $available_pages)) {
+$page = '';
+if (isset($_GET['page'])) {
+  $page = $_GET['page'];
+}
+if (in_array($page, $logged_in_pages) && empty($user)) {
+  header('Location: ./?page=login');
+}
 
-          include './pages/' .$page. '.php';
+if (in_array($page, $non_logged_in_pages) && !empty($user)) {
+  header('Location: ./?page=dashboard');
+}
 
-      }else{
+if (in_array($page, $available_pages)) {
+  include './pages/' . $page . '.php';
+} else {
+  header('Location: ./?page=dashboard');
+}
 
-      echo '<h1>Error 404</h1>';
-      }
-      
 
-    }else{
-      echo '<h1>Home Page<h1>';
-    }
-        
-     include './incloud/footer.inc.php';
-     ?>
 
-     
+
+include './incloud/footer.inc.php';
+?>
