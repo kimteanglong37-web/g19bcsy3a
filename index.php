@@ -5,8 +5,8 @@ include './incloud/header.inc.php';
 include './incloud/navbar.inc.php';
 
 
-$available_pages = ['login', 'register', 'dashboard', 'Logout'];
-$logged_in_pages = ['dashboard'];
+$available_pages = ['login', 'register', 'dashboard', 'logout', 'profile'];
+$logged_in_pages = ['dashboard', 'profile'];
 $non_logged_in_pages = ['login', 'register'];
 
 $page = '';
@@ -24,7 +24,7 @@ if (in_array($page, $non_logged_in_pages) && !empty($user)) {
 if (in_array($page, $available_pages)) {
   include './pages/' . $page . '.php';
 } else {
-  header('Location: ./?page=dashboard');
+  header('Location: ./?page=login');
 }
 
 

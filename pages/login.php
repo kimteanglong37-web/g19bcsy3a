@@ -35,14 +35,27 @@ if (isset($_POST['username'], $_POST['passwd'])) {
         </div>
         <div class="mb-3">
             <label class="form-label">Password</label>
-            <input name="passwd" type="password" class="form-control
+            <input name="passwd" id="exampleInputPassword1" type="password" class="form-control
             <?php echo empty($passwdErr) ? '' : 'is-invalid' ?>">
             <div class="invalid-feedback">
                 <?php echo $passwdErr ?>
             </div>
             <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="ShowPassword()">
                 <label class="form-check-label" for="exampleCheck1">Show Password</label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<Script>
+    var bool = true;
+          function ShowPassword(){
+               let pass = document.getElementById('exampleInputPassword1');
+        if(bool==true){
+            pass.setAttribute("type",'text');
+            bool=false;
+        }else{
+            pass.setAttribute("type",'password')
+            bool = true;
+        }
+    }
+</Script>
