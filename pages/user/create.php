@@ -20,14 +20,20 @@ if (isset($_POST['name'], $_POST['username'], $_POST['passwd'], $_FILES['photo']
         $usernameErr = 'please choose another username !';
     }
     if (empty($nameErr) && empty($usernameErr) && empty($passwdErr)) {
-        if (createUser($name, $username, $passwd, $photo)) {
-            $name = $username = '';
-            echo '<div class="alert alert-success" role="alert">
-            Create successful!
+        try {
+            if (createUser($name, $username, $passwd, $photo)) {
+                $name = $username = '';
+                echo '<div class="alert alert-success" role="alert">
+            Create successful! <a href="./?page=user/list">go to list</a>
             </div>';
-        } else {
-            echo '<div class="alert alert-danger" role="alert">
+            } else {
+                echo '<div class="alert alert-danger" role="alert">
             Create failed! Please try again.
+            </div>';
+            }
+        } catch (Exception $e) {
+            echo '<div class="alert alert-danger" role="alert">
+            ' . $e->getMessage() . '
             </div>';
         }
     }
