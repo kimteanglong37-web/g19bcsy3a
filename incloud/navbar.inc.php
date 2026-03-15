@@ -12,6 +12,11 @@
                 </li> -->
         <?php if ($isAdmin) { ?>
           <li class="nav-item">
+            <a class="nav-link" href="<?php echo $baseUrl ?>?page=user/list">Users list</a>
+          </li>
+        <?php } ?>
+        <?php if ($isAdmin) { ?>
+          <li class="nav-item">
             <a class="nav-link" href="<?php echo $baseUrl ?>?page=user/create">Users</a>
           </li>
         <?php } ?>
