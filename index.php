@@ -6,10 +6,10 @@ include './incloud/header.inc.php';
 include './incloud/navbar.inc.php';
 
 
-$available_pages = ['login', 'register', 'dashboard', 'logout', 'profile', 'user/create', 'user/list'];
+$available_pages = ['login', 'register', 'dashboard', 'logout', 'profile', 'user/create', 'user/list', 'user/update', 'user/delete'];
 $logged_in_pages = ['dashboard', 'profile'];
 $non_logged_in_pages = ['login', 'register'];
-$admin_pages = ['user/create', 'user/list'];
+$admin_pages = ['user/create', 'user/list', 'user/update', 'user/delete'];
 
 $page = '';
 if (isset($_GET['page'])) {

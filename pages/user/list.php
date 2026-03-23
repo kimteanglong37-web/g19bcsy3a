@@ -11,19 +11,30 @@
                 <th>#</th>
                 <th>Photo</th>
                 <th>Name</th>
+                <th>Options</th>
             </tr>
             <?php
             $users = getUsers();
             $count = 1;
             while ($row = $users->fetch_object()) {
                 echo '<tr>
-                            <th>' . $count . '</th>
-                            <th>
+                            <td>' . $count . '</td>
+                            <td>
                             <img src="' . ($row->photo ?? './assets/images/user.png') . '"
                                 class="rounded img-thumbnail" style="max-width:200px"/>
-                            </th>
-                            <th>' . $row->name . '</th>
+                            </td>
+                            <td>' . $row->name . '</td>
+                            <td>
+                                <a href="./?page=user/update&id=' . $row->id . '" 
+                                role="button" class="btn btn-primary">
+                                    Edit
+                                </a>
+                                <a href="./?page=user/delete&id=' . $row->id . '" 
+                                role="button" class="btn btn-danger">
+                                    Delete
+                                </a>
                         </tr>';
+
                 $count++;
             }
             ?>
